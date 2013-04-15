@@ -5,7 +5,11 @@ Integrade your Uploaded images in [jwysiwyg WYSIWYG Editor](https://github.com/a
 
 Setup for testing:
 
-`git clone clone git@github.com:akzhan/jwysiwyg.git editor`
+```
+git clone git@github.com:mraiur/jwysiwyg-local-image.git
+cd jwysiwyg-local-image
+git clone git@github.com:akzhan/jwysiwyg.git editor
+```
 
 
 Setup place files in editor/controls/
