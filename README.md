@@ -6,15 +6,14 @@ Plugin for https://github.com/akzhan/jwysiwyg WYSIWYG Editor
 
 Setup for testing:
 
-clone https://github.com/akzhan/jwysiwyg in 'editor' folder
+`git clone clone git@github.com:akzhan/jwysiwyg.git editor`
 
 
-Setup:
+Setup place files in editor/controls/
 
-Place 
+---
 
-wysiwyg.local.image.js
-wysiwyg.local.image.css
+>wysiwyg.local.image.js
 
-in editor/controls/
+>wysiwyg.local.image.css
 
