@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <link href="editor/jquery.wysiwyg.css" rel="stylesheet">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript" src="editor/jquery.wysiwyg.js"></script>
+        
+        <!-- plugin files -->
+        <script type="text/javascript" src="wysiwyg.local.image.js"></script>
+        <link href="wysiwyg.local.image.css" rel="stylesheet">
+        <!-- end plugin files --> 
+        
+        <style>
+            .editor{ width:400px; height: 300px;}
+        </style>
+    </head>
+    <body>
+        <textarea class="editor">
+            
+        </textarea>
+        <script type="text/javascript">
+            $('.editor').wysiwyg({
+                imagesConfig: {
+                    
+                }
+            });
+        </script>
+    </body>
+</html>

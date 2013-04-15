@@ -1,0 +1,3 @@
+.wysiwyg-system-image{ width:800px; height: 500px;}
+.wysiwyg-system-image .grouped-list{ width:200px; height: 500px; float:left; background-color:red;}
+.wysiwyg-system-image .expanded-list{ width:550px; height: 500px; float:left; background-color:blue;}
