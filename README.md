@@ -1,8 +1,7 @@
-jwysiwyg-local-image
+jwysiwyg-local-image Plugin
 ====================
 
-Plugin for https://github.com/akzhan/jwysiwyg WYSIWYG Editor
-
+Integrade your Uploaded images in [jwysiwyg WYSIWYG Editor](https://github.com/akzhan/jwysiwyg "jwysiwyg")
 
 Setup for testing:
 
