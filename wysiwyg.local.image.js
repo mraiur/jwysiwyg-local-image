@@ -38,7 +38,7 @@
                     src: "http://",
                     title: ""
                 };
-            
+
             dialogReplacements = {
                 legend  : "Insert Image",
                 preview : "Preview",
@@ -58,8 +58,8 @@
             };
 
             formImageHtml = '<form  id="wysiwyg-local-addImage">'+
-                '<div class="wysiwyg-system-image"><div class="grouped-list">1</div>'+
-                '<div class="expanded-list">2</div></div>'+
+                '<div class="wysiwyg-system-image"><div class="grouped-list"></div>'+
+                '<div class="expanded-list"></div></div>'+
                 ''+
                 ''+
                 ''+
@@ -79,6 +79,36 @@
 
             $(adialog).bind("afterOpen", function (e, dialog) {
                 
+                $.getJSON(config.groupUrl, function(data){
+                    var i = 0,
+                        dataLength = data.length,
+                        list = $("#wysiwyg-local-addImage .grouped-list"),
+                        row, html;
+
+                    for (; i <dataLength; i++) {
+                        
+                        html = '';
+                        if(data[i].title){
+                            html += '<div class="title">'+data[i].title+'</div>';
+                        }
+
+                        if(data[i].url){
+                            html+= '<div class="image"><img src="'+data[i].url+'" border="0" alt="" /></div>';
+                        }
+
+                        row = $('<div></div>')
+                            .html(html)
+                            .addClass('file')
+                            .bind('click', {
+                                config: config,
+                                Wysiwyg: Wysiwyg,
+                                info: data[i],
+                                self: self
+                            }, self.loadExpanded);
+
+                        list.append(row);
+                    }
+                });
             });
 
             adialog.open();
@@ -86,12 +116,48 @@
             $(Wysiwyg.editorDoc).trigger("editorRefresh.wysiwyg");
         },
 
-        processInsert: function (context, Wysiwyg, img) {
-           
+        processInsert: function (e) {
+            var data = e.data,
+                image = "<img src='"+data.info.url+"' alt='' border='0'/>";
+            data.Wysiwyg.insertHtml(image);
         },
 
-        makeForm: function (form, img) {
-           
+        loadExpanded: function(e){
+            var params = e.data,
+                info = params.info,
+                config = params.config,
+                list = $("#wysiwyg-local-addImage .expanded-list"),
+                row, html;
+            
+            list.empty();
+
+            $.getJSON(config.expandUrl, { id : info.id}, function(data){
+
+                var i = 0,
+                    dataLength = data.length;
+                
+                for (; i < dataLength; i++) {
+                    html = '';
+
+                    if(data[i].title){
+                        html += '<div class="title">'+data[i].title+'</div>';
+                    }
+
+                    if(data[i].url){
+                        html+= '<div class="image"><img src="'+data[i].url+'" border="0" alt="" /></div>';
+                    }
+
+                    row = $('<div></div>')
+                        .html(html)
+                        .addClass('file')
+                        .bind('click', {
+                            info : data[i],
+                            Wysiwyg: params.Wysiwyg
+                        }, params.self.processInsert);
+
+                    list.append(row);
+                }
+            });
         }
     };
 

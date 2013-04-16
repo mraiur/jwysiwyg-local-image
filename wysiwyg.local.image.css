@@ -1,3 +1,11 @@
-.wysiwyg-system-image{ width:800px; height: 500px;}
-.wysiwyg-system-image .grouped-list{ width:200px; height: 500px; float:left; background-color:red;}
-.wysiwyg-system-image .expanded-list{ width:550px; height: 500px; float:left; background-color:blue;}
+.wysiwyg-system-image{ width:800px; height: 500px; }
+.wysiwyg-system-image *{ padding:0px;}
+.wysiwyg-system-image .grouped-list{ background-color: #f9f9f9; width:195px; height: 500px; float:left; display: block; overflow: auto; border:1px #ccc solid; margin-right:5px;}
+.wysiwyg-system-image .grouped-list .file{ background-color:#FFFFFF; border:1px solid #ccc; border-left:0px; border-right: 0px; margin-bottom:5px; cursor:pointer;}
+.wysiwyg-system-image .grouped-list .file .title{ border-bottom:solid #ccc 1px; padding:1px 0px 1px 5px;}
+.wysiwyg-system-image .grouped-list .file .image{ margin: 2px 2px 2px 2px; }
+
+.wysiwyg-system-image .expanded-list{ background-color: #f9f9f9; width:550px; height: 500px; float:left; display: block; overflow: auto; border:1px #ccc solid;}
+.wysiwyg-system-image .expanded-list .file{ background-color:#FFFFFF; border:1px solid #ccc; margin:5px; }
+.wysiwyg-system-image .expanded-list .file .title{ border-bottom:solid #ccc 1px; padding:1px 0px 1px 5px;}
+.wysiwyg-system-image .expanded-list .file .image{ margin: 2px 2px 2px 2px; }

@@ -8,7 +8,7 @@
         <script type="text/javascript" src="wysiwyg.local.image.js"></script>
         <link href="wysiwyg.local.image.css" rel="stylesheet">
         <!-- end plugin files --> 
-        
+
         <style>
             .editor{ width:400px; height: 300px;}
         </style>
@@ -20,8 +20,12 @@
         <script type="text/javascript">
             $('.editor').wysiwyg({
                 imagesConfig: {
-                    
+                    groupUrl: 'test.php',
+                    expandUrl: 'test.php?list=true'
                 }
+            });
+            $(document).ready(function(){
+                $(".wysiwyg .toolbar .insertImage").trigger('click');
             });
         </script>
     </body>
