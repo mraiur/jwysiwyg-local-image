@@ -1,20 +1,22 @@
-jwysiwyg-local-image
+jwysiwyg-local-image Plugin
 ====================
 
-Plugin for https://github.com/akzhan/jwysiwyg WYSIWYG Editor
-
+Integrade your Uploaded images in [jwysiwyg WYSIWYG Editor](https://github.com/akzhan/jwysiwyg "jwysiwyg")
 
 Setup for testing:
 
-clone https://github.com/akzhan/jwysiwyg in 'editor' folder
+```
+git clone git@github.com:mraiur/jwysiwyg-local-image.git
+cd jwysiwyg-local-image
+git clone git@github.com:akzhan/jwysiwyg.git editor
+```
 
 
-Setup:
+Setup place files in editor/controls/
 
-Place 
+---
 
-wysiwyg.local.image.js
-wysiwyg.local.image.css
+>wysiwyg.local.image.js
 
-in editor/controls/
+>wysiwyg.local.image.css
 
